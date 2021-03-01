@@ -21,7 +21,7 @@ You'll make your own dataset in this task. But first, `cd data`
 
 - First of all, I used `google_images_download` which is a tool for downloading images from google-image. One way to to this is copying folder `./google_images_download` in [this amazing repo](https://github.com/hardikvasa/google-images-download) to your folder `./data` . 
 
-- Then open `create_data.py` , `keywords` and `limit` is up to you!. Save and Run it to get images in `.\download\keywords` . Oh note that if you want to get more than 100 images, you might need to refer [this](https://github.com/hardikvasa/google-images-download/issues/53)
+- Then open `create_data.py` , `keywords` and `limit` is up to you!. Save and Run it to get images in `./download/keywords` . Oh note that if you want to get more than 100 images, you might need to refer [this](https://github.com/hardikvasa/google-images-download/issues/53)
 
 ### 1.2 Annotations 
 
