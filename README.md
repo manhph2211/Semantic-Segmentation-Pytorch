@@ -7,27 +7,27 @@
 ![alt text](https://github.com/manhph2211/Semantic-Segmentation-Pytorch/blob/main/UNet.png)
 
 
-- Okey, let's start with `git clone https://github.com/manhph2211/Semantic-Segmentation-Pytorch.git` :raising_hand:
+- Okey, let's start with:
+
+  - `git clone https://github.com/manhph2211/Semantic-Segmentation-Pytorch.git` 
+  - `cd Semantic-Segmentation-Pytorch`
 
 
 ## 1. Data :smiley:
 
+You'll make your own dataset in this task. But first, `cd data`
 
+### 1.1 Images 
 
-### 1.1 Images :raising_hand:
+- First of all, I used `google_images_download` which is a tool for downloading images from google-image. One way to to this is copying folder `./google_images_download` in [this amazing repo](https://github.com/hardikvasa/google-images-download) to your folder `./data` . 
 
-- First of all, I used `google_images_download` which is a tool for downloading imgages from google-image. Please refer to [this](https://github.com/hardikvasa/google-images-download) to get more info.
+- Then open `create_data.py` , `keywords` and `limit` is up to you!. Save and Run it to get images in `.\download\keywords` . Oh note that if you want to get more than 100 images, you might need to refer [this](https://github.com/hardikvasa/google-images-download/issues/53)
 
-- Following these steps:
+### 1.2 Annotations 
 
-```
-git clone https://github.com/Joeclinton1/google-images-download.git
-mkdir data && cd data
+- In this task, I used [this website](https://cvat.org/) to label the downloaded data above and them dump as annotations!!!
 
-```
-
-
-
+- One other way to get annotations of our images that I find quite interesting, refer to [this](https://github.com/abreheret/PixelAnnotationTool?fbclid=IwAR1va_pH7DMsCWKkftSeGP7SGkGPS4TB_0ZPKHHHXqe8Ute-ovLdqe1q0O0)
 
 ## 2. Dependencies :smile:
 
