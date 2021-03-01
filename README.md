@@ -44,9 +44,9 @@ python3 utils.py
 - matplotlib
 - numpy
 - pandas
+- tqdm
 
-## 3. Train :smiley:
+## 3. Train & Prediction  :smiley:
 
-- Just run `python3 train`
-
-## 4. Prediction :sleepy:
+- Just run `python3 train.py`
+- `python3 test.py`
