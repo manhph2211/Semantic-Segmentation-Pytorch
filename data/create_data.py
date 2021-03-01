@@ -2,14 +2,14 @@ from google_images_download import google_images_download  #importing the librar
 import os
 
 
-def download(keywords='cats',limit=5):
+def download(keywords='cats',limit=100):
 	response = google_images_download.googleimagesdownload()  #class instantiation 
 	arguments = {"keywords":keywords,"limit":limit,"print_urls":True}  #creating list of arguments 
 	paths = response.download(arguments)  #passing the arguments to the function 
 	print(paths)
 
 
-def clean(root='./data/downloads/dogs/',limit=5):
+def clean(root='./downloads/cats/',limit=100):
 
 	pths=os.listdir(root)
 	i=0
