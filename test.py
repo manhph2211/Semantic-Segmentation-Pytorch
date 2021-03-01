@@ -9,6 +9,7 @@ from train import test_data
 def test(model,test_data):
     imgs,masks=next(iter(test_data))
     mask=model(imgs[0])
+    print(imgs[0].shape)
     f, axarr = plt.subplots(2, 2)
     axarr[0, 0].imshow(imgs[0])
     axarr[0, 1].imshow(mask)
