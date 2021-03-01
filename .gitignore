@@ -1,7 +1,9 @@
 #Mine
 
-./data/
-
+./data/downloads/
+./data/mask/
+./data/*.json
+./data/annotations
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
