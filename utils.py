@@ -1,9 +1,18 @@
 import json
 import os
-
 import cv2
 from pycocotools.coco import COCO
 from sklearn.model_selection import train_test_split
+import json
+from sklearn.metrics import jaccard_score
+import torch
+from torch.nn.functional import softmax
+
+
+def read_json(path):
+    with open(path, "r") as File:
+        data = json.load(File)
+        return data
 
 
 def export_coco_format_data(annotation_path='./data/annotations/instances_default.json',
@@ -49,7 +58,7 @@ def export_coco_format_data(annotation_path='./data/annotations/instances_defaul
         json.dump(image_label_pairs, f)
 
 
-def split_data(all_data_json_path='./data/data.json', ratio=[0.6, 0.2, 0.2]):
+def split_data(all_data_json_path='./data/data.json', ratio=[0.8, 0.15, 0.05]):
     with open(all_data_json_path, 'r') as f:
         data = json.load(f)
 
@@ -79,6 +88,24 @@ def split_data(all_data_json_path='./data/data.json', ratio=[0.6, 0.2, 0.2]):
     save_data(val_image_paths, val_mask_paths, './data/val_data.json')
     save_data(test_image_paths, test_mask_paths, './data/test_data.json')
 
+
+def iou(logits, label):
+    """
+    :param logits: outputs of model
+    :param label: ground-truth masks
+    :return:
+    """
+    predicts = softmax(logits)
+    predicts = torch.argmax(predicts, dim=1)
+    predicts = torch.reshape(predicts, [predicts.shape[0], -1]).numpy()
+    label = torch.reshape(label, [label.shape[0], -1]).numpy()
+
+    average_score = 0
+    for p, l in zip(predicts, label):
+        score = jaccard_score(p, l, average='macro')
+        average_score += score
+
+    return average_score / len(predicts)
 
 if __name__ == '__main__':
     export_coco_format_data()

@@ -25,12 +25,28 @@ You'll make your own dataset in this task. But first, `cd data`
 
 ### 1.2 Annotations 
 
-- In this task, I used [this website](https://cvat.org/) to label the downloaded data above and them dump as annotations!!!
+- In this task, I used [this website](https://cvat.org/) to label the downloaded images above and then dump them as annotations, note that annotations should be saved in `./data`. Then just following:
+```
+mkdir mask && cd mask
+cd ../..
+python3 utils.py
+```
 
 - One other way to get annotations of our images that I find quite interesting, refer to [this](https://github.com/abreheret/PixelAnnotationTool?fbclid=IwAR1va_pH7DMsCWKkftSeGP7SGkGPS4TB_0ZPKHHHXqe8Ute-ovLdqe1q0O0)
 
 ## 2. Dependencies :smile:
 
+- torch
+- torchvision
+- Python-opencv
+- sklearn
+- pycocotools
+- matplotlib
+- numpy
+- pandas
+
 ## 3. Train :smiley:
+
+- Just run `python3 train`
 
 ## 4. Prediction :sleepy:
