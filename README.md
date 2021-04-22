@@ -2,7 +2,7 @@
 
 ## 0. Introduction :smiley:
 
-- This repo is about implementing normal UNet in the task of **semantic segmentation** from scratch!
+- This repo is about implementing normal UNet in the task of **semantic segmentation**!
 
 ![alt text](https://github.com/manhph2211/Semantic-Segmentation-Pytorch/blob/main/UNet.png)
 
